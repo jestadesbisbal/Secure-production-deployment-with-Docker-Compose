@@ -1,5 +1,4 @@
 import requests
-import sys
 
 # The target URL
 # URL = "https://github.com/"
@@ -18,13 +17,13 @@ try:
     response = requests.get(URL)
     print(f"Scanning {URL}")
     print(f"Status: {response.status_code}\n")
-    
+
     score = 0
     max_score = len(REQUIRED_HEADERS)
 
     for header, expected_value in REQUIRED_HEADERS.items():
         value = response.headers.get(header)
-        
+
         if value:
             # Check if value roughly matches expectation
             if expected_value in value:
@@ -34,7 +33,7 @@ try:
                 print(f"Found header {header} but value differs")
                 print(f"\tExpected substring: {expected_value}")
                 print(f"\tActual: {value}")
-                score += 0.5 # Partial credit
+                score += 0.5  # Partial credit
         else:
             print(f"Missing header {header}")
 
@@ -42,4 +41,3 @@ try:
 
 except Exception as e:
     print(f"Error connecting: {e}")
-
