@@ -28,5 +28,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
+          file: docker/app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/sportsclub:latest
