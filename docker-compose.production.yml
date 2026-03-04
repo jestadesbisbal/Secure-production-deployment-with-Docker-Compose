@@ -1,0 +1,25 @@
+services:
+  app-blue:
+    restart: always
+    ports: []
+    env_file:
+      - .env
+
+  app-green:
+    restart: always
+    ports: []
+    env_file:
+      - .env
+
+  postgres:
+    restart: always
+    ports: !override []
+    expose:
+      - "5432"
+    env_file:
+      - .env
+
+  nginx:
+    restart: always
+    ports:
+      - "80:80"
