@@ -8,8 +8,8 @@ URL = "http://localhost:8000/api/v1/core/addresses"
 REQUIRED_HEADERS = {
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",  # or SAMEORIGIN
-    "Strict-Transport-Security": "max-age", # Only works if HTTPS is enabled!
-    "Content-Security-Policy": "default-src 'none'", # For APIs, block everything
+    "Strict-Transport-Security": "max-age",  # Only works if HTTPS is enabled!
+    "Content-Security-Policy": "default-src 'none'",  # For APIs, block everything
     "Referrer-Policy": "same-origin",
 }
 
